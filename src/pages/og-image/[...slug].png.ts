@@ -1,4 +1,4 @@
-import { Resvg } from "@resvg/resvg-js";
+import { Resvg } from "@cf-wasm/resvg/workerd";
 import type { APIContext, InferGetStaticPropsType } from "astro";
 import satori, { type SatoriOptions } from "satori";
 import { html } from "satori-html";
