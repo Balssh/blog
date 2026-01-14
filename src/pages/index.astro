@@ -27,13 +27,19 @@ const latestNotes = allNotes
 
 <PageLayout meta={{ title: "Home" }}>
 	<section>
-		<h1 class="title mb-12">Hello World!</h1>
+    <h1 class="title mb-12">
+      hi <br/>
+      buna <br/>
+      willkommen <br/>
+      bienvenue <br/>
+      こんにちは!
+    </h1>
 		<p class="mb-4">
-			Hi, I’m a theme for Astro, a simple starter that you can use to create your website or blog.
-			If you want to know more about how you can customise me, add more posts, and make it your own,
-			click on the GitHub icon link below and it will take you to my repo.
-		</p>
-		<SocialList />
+      Here I'm sharing my thoughts on various subjects, trying to cultivate a sort of digital garden.
+      More about myself on the <a href="/about/">about page</a>. <br/>
+
+      Have a nice stay! (´• ω •`)
+    </p>
 	</section>
 	{
 		pinnedPosts.length > 0 && (
@@ -77,4 +83,7 @@ const latestNotes = allNotes
 			</section>
 		)
 	}
+  <section class="mt-16">
+	  <SocialList />
+  </section>
 </PageLayout>
