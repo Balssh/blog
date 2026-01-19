@@ -8,77 +8,77 @@
 
 /* you could refactor below to use light-dark(), depending on your target audience */
 @theme {
-    --color-global-bg: oklch(0.9587 0.0198 77.32);
-    --color-global-text: oklch(26.99% 0.0096 235.05);
-    --color-link: oklch(55.44% 0.0431 185.69);
-    --color-accent: oklch(55.27% 0.195 19.06);
-    --color-accent-2: oklch(18.15% 0 0);
-    --color-quote: oklch(55.27% 0.195 19.06);
+  --color-global-bg: oklch(0.9039 0.053876 45.7141);
+  --color-global-text: oklch(0.1799 0.0681 305.19);
+  --color-link: oklch(55.44 0.0431 185.69);
+  --color-accent: oklch(0.4289 0.1259 38.61);
+  --color-accent-2: oklch(18.15 0 0);
+  --color-quote: oklch(55.27 0.195 19.06);
 }
 
 @layer base {
-    html {
-        color-scheme: light dark;
-        accent-color: var(--color-accent);
-        scrollbar-gutter: stable;
+  html {
+    color-scheme: light dark;
+    accent-color: var(--color-accent);
+    scrollbar-gutter: stable;
 
-        &[data-theme="light"] {
-            color-scheme: light;
-        }
-
-        &[data-theme="dark"] {
-            color-scheme: dark;
-            --color-global-bg: oklch(23.64% 0.0045 248);
-            --color-global-text: oklch(83.54% 0 264);
-            --color-link: oklch(70.44% 0.1133 349);
-            --color-accent: oklch(70.91% 0.1415 163.7);
-            --color-accent-2: oklch(94.66% 0 0);
-            --color-quote: oklch(94.8% 0.106 136.49);
-        }
+    &[data-theme="light"] {
+      color-scheme: light;
     }
 
-    :target {
-        scroll-margin-block: 5ex;
+    &[data-theme="dark"] {
+      color-scheme: dark;
+      --color-global-bg: oklch(0.1588 0.0288 339.24);
+      --color-global-text: oklch(0.9472 0.101079 98.265);
+      --color-link: oklch(0.7731 0.2431 139.26);
+      --color-accent: oklch(0.8989 0.1861 136.22);
+      --color-accent-2: oklch(0.7291 0.158 34.37);
+      --color-quote: oklch(94.8 0.106 136.49);
     }
+  }
 
-    @view-transition {
-        navigation: auto;
-    }
+  :target {
+    scroll-margin-block: 5ex;
+  }
 
-    /* Astro image responsive styles, modified from -> https://docs.astro.build/en/guides/images/#responsive-image-styles */
-    :where([data-astro-image]) {
-        object-fit: var(--fit);
-        object-position: var(--pos);
-    }
-    [data-astro-image="full-width"] {
-        width: 100%;
-    }
-    [data-astro-image="constrained"] {
-        max-width: 100%;
-    }
+  @view-transition {
+    navigation: auto;
+  }
+
+  /* Astro image responsive styles, modified from -> https://docs.astro.build/en/guides/images/#responsive-image-styles */
+  :where([data-astro-image]) {
+    object-fit: var(--fit);
+    object-position: var(--pos);
+  }
+  [data-astro-image="full-width"] {
+    width: 100%;
+  }
+  [data-astro-image="constrained"] {
+    max-width: 100%;
+  }
 }
 
 @layer components {
-    @import "./components/admonition.css";
-    @import "./components/github-card.css";
+  @import "./components/admonition.css";
+  @import "./components/github-card.css";
 
-    .cactus-link {
-        @apply hover:decoration-link underline underline-offset-2 hover:decoration-2;
-    }
+  .cactus-link {
+    @apply hover:decoration-link underline underline-offset-2 hover:decoration-2;
+  }
 
-    .title {
-        @apply text-accent-2 text-2xl font-semibold;
-    }
+  .title {
+    @apply text-accent-2 text-2xl font-semibold;
+  }
 }
 
 @utility prose {
-    --tw-prose-body: var(--color-global-text);
-    --tw-prose-bold: var(--color-global-text);
-    --tw-prose-bullets: var(--color-global-text);
-    --tw-prose-code: var(--color-global-text);
-    --tw-prose-headings: var(--color-accent-2);
-    --tw-prose-hr: 0.5px dashed #666;
-    --tw-prose-links: var(--color-global-text);
-    --tw-prose-quotes: var(--color-quote);
-    --tw-prose-th-borders: #666;
+  --tw-prose-body: var(--color-global-text);
+  --tw-prose-bold: var(--color-global-text);
+  --tw-prose-bullets: var(--color-global-text);
+  --tw-prose-code: var(--color-global-text);
+  --tw-prose-headings: var(--color-accent-2);
+  --tw-prose-hr: 0.5px dashed #666;
+  --tw-prose-links: var(--color-global-text);
+  --tw-prose-quotes: var(--color-quote);
+  --tw-prose-th-borders: #666;
 }

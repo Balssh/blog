@@ -21,69 +21,69 @@ const pinnedPosts = allPostsByDate.filter((p) => p.data.pinned).slice(0, MAX_PIN
 const MAX_NOTES = 5;
 const allNotes = await getCollection("note");
 const latestNotes = allNotes
-	.sort(collectionDateSort)
-	.slice(0, MAX_NOTES) as CollectionEntry<"note">[];
+  .sort(collectionDateSort)
+  .slice(0, MAX_NOTES) as CollectionEntry<"note">[];
 ---
 
 <PageLayout meta={{ title: "Home" }}>
-	<section>
+  <section>
     <h1 class="title mb-12">
-      hi <br/>
-      buna <br/>
-      willkommen <br/>
-      bienvenue <br/>
-      こんにちは!
+      hi <br />
+      buna <br />
+      willkommen <br />
+      bienvenue <br />
+      こんにちは
     </h1>
-		<p class="mb-4">
-      Here I'm sharing my thoughts on various subjects, trying to cultivate a sort of digital garden.
-      More about myself on the <a href="/about/">about page</a>. <br/>
+    <p class="mb-4">
+      Here I'm sharing my thoughts on various subjects, trying to cultivate a sort of digital
+      garden. More about myself on the <a href="/about/" class="cactus-link">about page</a>. <br />
 
       Have a nice stay! (´• ω •`)
     </p>
-	</section>
-	{
-		pinnedPosts.length > 0 && (
-			<section class="mt-16">
-				<h2 class="title mb-6 text-xl">Pinned Posts</h2>
-				<ul class="space-y-4" role="list">
-					{pinnedPosts.map((p) => (
-						<li class="grid gap-1 sm:grid-cols-[auto_1fr]">
-							<PostPreview post={p} />
-						</li>
-					))}
-				</ul>
-			</section>
-		)
-	}
-	<section class="mt-16">
-		<h2 class="title text-accent mb-6 text-xl"><a href="/posts/">Posts</a></h2>
-		<ul class="space-y-4" role="list">
-			{
-				latestPosts.map((p) => (
-					<li class="grid gap-1 sm:grid-cols-[auto_1fr]">
-						<PostPreview post={p} />
-					</li>
-				))
-			}
-		</ul>
-	</section>
-	{
-		latestNotes.length > 0 && (
-			<section class="mt-16">
-				<h2 class="title text-accent mb-6 text-xl">
-					<a href="/notes/">Notes</a>
-				</h2>
-				<ul class="space-y-6" role="list">
-					{latestNotes.map((note) => (
-						<li>
-							<Note note={note} as="h3" isPreview />
-						</li>
-					))}
-				</ul>
-			</section>
-		)
-	}
+  </section>
+  {
+    pinnedPosts.length > 0 && (
+      <section class="mt-16">
+        <h2 class="title mb-6 text-xl">Pinned Posts</h2>
+        <ul class="space-y-4" role="list">
+          {pinnedPosts.map((p) => (
+            <li class="grid gap-1 sm:grid-cols-[auto_1fr]">
+              <PostPreview post={p} />
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
   <section class="mt-16">
-	  <SocialList />
+    <h2 class="title text-accent mb-6 text-xl"><a href="/posts/">Posts</a></h2>
+    <ul class="space-y-4" role="list">
+      {
+        latestPosts.map((p) => (
+          <li class="grid gap-1 sm:grid-cols-[auto_1fr]">
+            <PostPreview post={p} />
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+  {
+    latestNotes.length > 0 && (
+      <section class="mt-16">
+        <h2 class="title text-accent mb-6 text-xl">
+          <a href="/notes/">Notes</a>
+        </h2>
+        <ul class="space-y-6" role="list">
+          {latestNotes.map((note) => (
+            <li>
+              <Note note={note} as="h3" isPreview />
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+  <section class="mt-16">
+    <SocialList />
   </section>
 </PageLayout>
