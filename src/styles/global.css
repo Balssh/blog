@@ -2,6 +2,7 @@
 @import "tailwindcss";
 /* config for tailwindcss-typography plugin */
 @config "../../tailwind.config.ts";
+@source "../**/*.{astro,html,js,jsx,ts,tsx,md,mdx}";
 
 /* use a selector-based strategy for dark mode */
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
@@ -68,6 +69,13 @@
 
   .title {
     @apply text-accent-2 text-2xl font-semibold;
+  }
+}
+
+/* Fix for https://github.com/tailwindlabs/tailwindcss/issues/16531 */
+@custom-variant hover {
+  &:hover {
+    @slot;
   }
 }
 
